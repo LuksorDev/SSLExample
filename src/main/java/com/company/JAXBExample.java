@@ -2,14 +2,13 @@ package com.company;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
 import java.util.List;
 
 public class JAXBExample {
 
-    public static void main(String args[]) throws JAXBException {
+    public static void main(String[] args) {
 
 try{
         User user = new User();

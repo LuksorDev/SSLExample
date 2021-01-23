@@ -10,14 +10,15 @@ import java.security.cert.CertificateException;
 
 public class ServerR
 {
-	public static void main(String args[])
+	public static void main(String[] args)
 	{
 		SSLServerSocketFactory factory = null;
 		SSLServerSocket sslserversocket = null;
 		SSLSocket sslSocket = null;
-		String ksName = "C:\\Users\\Luksor\\IdeaProjects\\SSLExample\\src\\main\\java\\com\\company\\keystore.jks";
-		char ksPass[] = "password".toCharArray();
-		char ctPass[] = "132456".toCharArray();
+		//String ksName = "C:\\Users\\Luksor\\IdeaProjects\\SSLExample\\src\\main\\java\\com\\company\\keystore.jks";
+		String ksName = "D:\\Projekty\\SSLExample\\src\\main\\java\\com\\company\\keystore.jks";
+		char[] ksPass = "password".toCharArray();
+		char[] ctPass = "132456".toCharArray();
 		KeyStore ks;
 
 	    System.out.println("Serwer czeka na klienta");
@@ -164,7 +165,7 @@ class ServerThread extends Thread
 					line = (String) is.readObject();
 					long a = handler.getPhrase("dsf");
 					//os.writeObject(a);
-					System.out.println(a);
+					//System.out.println(a);
 
 					//handler.getPhrase(line);
 					os.writeObject("aa");

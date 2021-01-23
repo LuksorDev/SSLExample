@@ -5,15 +5,12 @@ import org.elasticsearch.action.get.GetRequest;
 import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.search.SearchRequest;
-import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.common.xcontent.XContentBuilder;
 import org.elasticsearch.common.xcontent.XContentFactory;
 import org.elasticsearch.index.query.QueryBuilders;
-import org.elasticsearch.search.SearchHit;
-import org.elasticsearch.search.SearchHits;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 
 import javax.xml.bind.JAXBContext;
@@ -29,7 +26,8 @@ import java.util.List;
 public class Handler
 {
 
-	File file = new File("C:\\Users\\Luksor\\IdeaProjects\\SSLExample\\src\\main\\java\\com\\company\\database.xml");
+	File file = new File("D:\\Projekty\\SSLExample\\src\\main\\java\\com\\company\\database.xml");
+	//File file = new File("C:\\Users\\Luksor\\IdeaProjects\\SSLExample\\src\\main\\java\\com\\company\\database.xml");
 	Unmarshaller jaxbUnmarshaller;
 	Users users;
 	List<User> userList;
@@ -51,17 +49,18 @@ public class Handler
 		{
 			builder.field("user", "kimchy");
 			builder.timeField("postDate", new Date());
-			builder.field("message", "trying out Elasticsearch");
+			builder.field("message", "Elasticsearch phrase search is working. Try out.");
 		}
 		builder.endObject();
 		IndexRequest indexRequest = new IndexRequest("posts")
 				.id("1").source(builder);
 
+		client.index(indexRequest, RequestOptions.DEFAULT);
 
-		SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
-		sourceBuilder.query(QueryBuilders.matchAllQuery());
-		SearchRequest searchRequest = new SearchRequest("posts");
-		searchRequest.source(sourceBuilder);
+		//SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
+		//sourceBuilder.query(QueryBuilders.matchAllQuery());
+		//SearchRequest searchRequest = new SearchRequest("posts");
+		//searchRequest.source(sourceBuilder);
 
 //		SearchResponse searchResponse = client.search(searchRequest, RequestOptions.DEFAULT);
 //		SearchHits hits = searchResponse.getHits();
@@ -71,14 +70,14 @@ public class Handler
 //		return totalHits;
 
 
-		//client.index(indexRequest, RequestOptions.DEFAULT);
 
-		GetRequest getRequest = new GetRequest(
-				"posts",
-				"1");
 
-		getRequest.storedFields("message");
-		GetResponse getResponse = client.get(getRequest, RequestOptions.DEFAULT);
+		//GetRequest getRequest = new GetRequest(
+		//		"posts",
+		//		"2");
+
+		//getRequest.storedFields("message");
+		//GetResponse getResponse = client.get(getRequest, RequestOptions.DEFAULT);
 		//String message = getResponse.getField("message").getValue();
 		return 34;
 	/*

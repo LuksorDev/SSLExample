@@ -1,19 +1,14 @@
 package com.company;
 
-import javax.net.ssl.KeyManagerFactory;
-import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
 import java.io.*;
 import java.net.InetAddress;
-import java.net.Socket;
-import java.security.*;
-import java.security.cert.CertificateException;
 
 public class ClientR
 {
 
-	public static void main(String args[]) throws IOException
+	public static void main(String[] args) throws IOException
 	{	
 	    InetAddress address = InetAddress.getLocalHost();
 		SSLSocketFactory sslsocketfactory = null;
@@ -27,7 +22,8 @@ public class ClientR
 	
 	    try 
         {
-			System.setProperty("javax.net.ssl.trustStore" , "C:\\Users\\Luksor\\IdeaProjects\\SSLExample\\src\\main\\java\\com\\company\\keystore.jks")  ;
+			//System.setProperty("javax.net.ssl.trustStore", "C:\\Users\\Luksor\\IdeaProjects\\SSLExample\\src\\main\\java\\com\\company\\keystore.jks");
+			System.setProperty("javax.net.ssl.trustStore", "D:\\Projekty\\SSLExample\\src\\main\\java\\com\\company\\keystore.jks");
             sslsocketfactory = (SSLSocketFactory) SSLSocketFactory.getDefault();
             sslsocket = (SSLSocket) sslsocketfactory.createSocket(address, 4400);
 			sslsocket.startHandshake();
