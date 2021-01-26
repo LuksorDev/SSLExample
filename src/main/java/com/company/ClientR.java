@@ -22,8 +22,8 @@ public class ClientR
 	
 	    try 
         {
-			//System.setProperty("javax.net.ssl.trustStore", "C:\\Users\\Luksor\\IdeaProjects\\SSLExample\\src\\main\\java\\com\\company\\keystore.jks");
-			System.setProperty("javax.net.ssl.trustStore", "D:\\Projekty\\SSLExample\\src\\main\\java\\com\\company\\keystore.jks");
+			System.setProperty("javax.net.ssl.trustStore", "C:\\Users\\Luksor\\IdeaProjects\\SSLExample\\src\\main\\java\\com\\company\\keystore.jks");
+			//System.setProperty("javax.net.ssl.trustStore", "D:\\Projekty\\SSLExample\\src\\main\\java\\com\\company\\keystore.jks");
             sslsocketfactory = (SSLSocketFactory) SSLSocketFactory.getDefault();
             sslsocket = (SSLSocket) sslsocketfactory.createSocket(address, 4400);
 			sslsocket.startHandshake();

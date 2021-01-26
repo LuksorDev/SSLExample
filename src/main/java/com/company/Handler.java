@@ -26,8 +26,8 @@ import java.util.List;
 public class Handler
 {
 
-	File file = new File("D:\\Projekty\\SSLExample\\src\\main\\java\\com\\company\\database.xml");
-	//File file = new File("C:\\Users\\Luksor\\IdeaProjects\\SSLExample\\src\\main\\java\\com\\company\\database.xml");
+	//File file = new File("D:\\Projekty\\SSLExample\\src\\main\\java\\com\\company\\database.xml");
+	File file = new File("C:\\Users\\Luksor\\IdeaProjects\\SSLExample\\src\\main\\java\\com\\company\\database.xml");
 	Unmarshaller jaxbUnmarshaller;
 	Users users;
 	List<User> userList;
@@ -49,11 +49,11 @@ public class Handler
 		{
 			builder.field("user", "kimchy");
 			builder.timeField("postDate", new Date());
-			builder.field("message", "Elasticsearch phrase search is working. Try out.");
+			builder.field("message", "baca baca trying try baca baca");
 		}
 		builder.endObject();
 		IndexRequest indexRequest = new IndexRequest("posts")
-				.id("1").source(builder);
+				.id("13").source(builder);
 
 		client.index(indexRequest, RequestOptions.DEFAULT);
 

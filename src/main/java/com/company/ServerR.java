@@ -15,8 +15,8 @@ public class ServerR
 		SSLServerSocketFactory factory = null;
 		SSLServerSocket sslserversocket = null;
 		SSLSocket sslSocket = null;
-		//String ksName = "C:\\Users\\Luksor\\IdeaProjects\\SSLExample\\src\\main\\java\\com\\company\\keystore.jks";
-		String ksName = "D:\\Projekty\\SSLExample\\src\\main\\java\\com\\company\\keystore.jks";
+		String ksName = "C:\\Users\\Luksor\\IdeaProjects\\SSLExample\\src\\main\\java\\com\\company\\keystore.jks";
+		//String ksName = "D:\\Projekty\\SSLExample\\src\\main\\java\\com\\company\\keystore.jks";
 		char[] ksPass = "password".toCharArray();
 		char[] ctPass = "132456".toCharArray();
 		KeyStore ks;
